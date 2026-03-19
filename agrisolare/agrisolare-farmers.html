@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parco Agrisolare 2026 — Fino all'80% per la tua azienda agricola</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  color: #1a1a0f;
+  background: #fdf8f0;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background: url('img2.jpg') center center / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2) 0%,
+    rgba(10,30,15,0.5) 40%,
+    rgba(10,30,15,0.92) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 24px 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  background: #d4a017;
+  color: #1a1a0f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 8vw, 56px);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.hero h1 span { color: #f4cc50; }
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* DEADLINE BANNER */
+.deadline {
+  background: #c0392b;
+  color: #fff;
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.deadline img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* NUMBERS */
+.numbers {
+  background: #2d6a4f;
+  padding: 48px 24px;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.num-box {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.num-box .n {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #f4cc50;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.num-box .l {
+  font-size: 13px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* WHAT YOU GET */
+.section {
+  padding: 56px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #2d6a4f;
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 6vw, 36px);
+  margin-bottom: 32px;
+  line-height: 1.3;
+}
+
+.benefit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #2d6a4f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.benefit-list li .icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-list li .text strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.benefit-list li .text span {
+  font-size: 14px;
+  color: #555;
+}
+
+/* BEFORE AFTER */
+.before-after {
+  padding: 0 0 56px;
+}
+
+.before-after img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.before-after-label {
+  display: flex;
+  gap: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ba-label {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ba-label.before {
+  background: #c0392b;
+  color: #fff;
+  border-radius: 0 0 0 8px;
+}
+
+.ba-label.after {
+  background: #2d6a4f;
+  color: #fff;
+  border-radius: 0 0 8px 0;
+}
+
+/* EXAMPLE */
+.example {
+  background: #fff;
+  margin: 0 24px 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  max-width: 552px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.example-header {
+  background: #2d6a4f;
+  color: #fff;
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.example-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.example-body {
+  padding: 20px;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cost-row:last-child { border-bottom: none; }
+
+.cost-row .label { font-size: 14px; color: #555; }
+.cost-row .value { font-size: 18px; font-weight: 700; }
+.cost-row .value.total { color: #2d6a4f; font-size: 22px; }
+.cost-row .value.you { color: #c0392b; font-size: 22px; }
+.cost-row .value.state { color: #2d6a4f; }
+
+/* HANDSHAKE */
+.handshake {
+  padding: 0 24px 48px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.handshake img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 24px;
+}
+
+.handshake h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  background: #2d6a4f;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.step-text { font-size: 15px; }
+
+/* MONEY */
+.money-section {
+  padding: 48px 24px;
+  background: #f0f7f4;
+  text-align: center;
+}
+
+.money-section img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.money-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.money-section p {
+  font-size: 16px;
+  color: #444;
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta-section {
+  padding: 56px 24px;
+  text-align: center;
+  background: #1a1a0f;
+  color: #fff;
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 6vw, 36px);
+  margin-bottom: 8px;
+  color: #f4cc50;
+}
+
+.cta-section p {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 32px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+
+.cta-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+.cta-note {
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="badge">🌱 PNRR · Parco Agrisolare 2026</div>
+    <h1>Fino all'<span>80%</span> di contributo<br>per il tuo tetto agricolo</h1>
+    <p class="hero-sub">Lo Stato paga la maggior parte dei lavori.<br>Tu investi poco, guadagni per sempre.</p>
+  </div>
+</section>
+
+<!-- DEADLINE -->
+<div class="deadline">
+  <img src="img5.png" alt="Scadenza">
+  <span>⚠️ SCADENZA: 9 APRILE 2026 — I fondi sono limitati: chi arriva prima, prende</span>
+</div>
+
+<!-- NUMBERS -->
+<div class="numbers">
+  <div class="numbers-grid">
+    <div class="num-box">
+      <div class="n">80%</div>
+      <div class="l">contributo<br>a fondo perduto</div>
+    </div>
+    <div class="num-box">
+      <div class="n">789M</div>
+      <div class="l">euro disponibili<br>dal PNRR</div>
+    </div>
+    <div class="num-box">
+      <div class="n">0€</div>
+      <div class="l">costo consulenza<br>per te</div>
+    </div>
+    <div class="num-box">
+      <div class="n">18</div>
+      <div class="l">mesi per<br>completare i lavori</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="section">
+  <div class="section-label">Cosa copre il bando</div>
+  <h2>Tutto quello che<br>puoi finanziare</h2>
+  <ul class="benefit-list">
+    <li>
+      <div class="icon">☀️</div>
+      <div class="text">
+        <strong>Pannelli fotovoltaici</strong>
+        <span>Da 6 kWp fino a 1.000 kWp sul tetto del capannone</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🏚️</div>
+      <div class="text">
+        <strong>Rimozione amianto/eternit</strong>
+        <span>Bonifica completa della vecchia copertura, finanziata all'80%</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🏠</div>
+      <div class="text">
+        <strong>Nuova copertura del tetto</strong>
+        <span>Tetto nuovo, moderno e a norma — tutto incluso nel contributo</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">💨</div>
+      <div class="text">
+        <strong>Ventilazione e isolamento</strong>
+        <span>Efficienza energetica per stalle, magazzini, cantine</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🔋</div>
+      <div class="text">
+        <strong>Batterie di accumulo</strong>
+        <span>Fino a 1.000 €/kWh — energia anche di notte e nei giorni nuvolosi</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- BEFORE AFTER -->
+<div class="before-after">
+  <img src="img1.jpg" alt="Prima e dopo — tetto amianto sostituito con pannelli solari">
+  <div class="before-after-label">
+    <div class="ba-label before">Prima — Tetto in eternit</div>
+    <div class="ba-label after">Dopo — Nuovo tetto + fotovoltaico</div>
+  </div>
+</div>
+
+<!-- EXAMPLE -->
+<div class="example">
+  <div class="example-header">
+    💰 Esempio concreto — Capannone 500 m²
+  </div>
+  <img src="img6.png" alt="Contributi euro" class="example-img" style="object-fit:contain; background:#fdf8f0; padding:16px;">
+  <div class="example-body">
+    <div class="cost-row">
+      <span class="label">Valore totale dei lavori</span>
+      <span class="value total">70.000 €</span>
+    </div>
+    <div class="cost-row">
+      <span class="label">Contributo statale (80%)</span>
+      <span class="value state">− 56.000 €</span>
+    </div>
+    <div class="cost-row">
+      <span class="label" style="font-weight:700;">Tu paghi solo</span>
+      <span class="value you">14.000 €</span>
+    </div>
+    <div class="cost-row" style="background:#f0f7f4; margin:0 -20px; padding:12px 20px; border-radius:0 0 8px 8px;">
+      <span class="label">E produci energia gratis per sempre</span>
+      <span style="font-size:20px;">♾️</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="handshake">
+  <img src="img4.png" alt="Accordo con installatore">
+  <h3>Come funziona con noi</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Ci contatti</strong> — sopralluogo gratuito senza impegno</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Valutiamo insieme</strong> — verifichiamo se la tua azienda è idonea</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Prepariamo la domanda</strong> — ci occupiamo noi di tutta la burocrazia</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Realizziamo i lavori</strong> — tetto nuovo e pannelli installati</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-text"><strong>Ricevi il contributo</strong> — lo Stato rimborsa direttamente</div>
+    </div>
+  </div>
+</div>
+
+<!-- MONEY -->
+<div class="money-section">
+  <img src="img3.png" alt="Accordo fermere">
+  <h2>789 milioni di euro<br>sono già stanziati</h2>
+  <p>I fondi vengono assegnati <strong>a sportello</strong> — chi presenta la domanda prima, ha la priorità. Non aspettare.</p>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Hai un capannone<br>o una stalla?</h2>
+  <p>Contattaci oggi — il sopralluogo è gratuito e senza impegno. Verifichiamo insieme se puoi accedere al contributo.</p>
+
+  <a href="https://wa.me/393XXXXXXXXX?text=Ciao%2C%20vorrei%20informazioni%20sul%20bando%20Parco%20Agrisolare%202026" class="cta-btn">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Scrivici su WhatsApp
+  </a>
+  <div class="cta-note">Risposta entro poche ore · Sopralluogo gratuito · Nessun impegno</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Energia Fortezza</strong> · Sarzana (SP), Liguria<br>
+  Servizio erogato da S.A.I. Etruria S.R.L.S. · P.IVA 01534780117<br>
+  REA SP-228789 · PEC: saietruria@pec.it
+</footer>
+
+</body>
+</html>
